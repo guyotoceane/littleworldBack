@@ -47,6 +47,20 @@ $app->group('/fiche', function () {
 
     });
 
+
+    $this->get('/', function ($request, $response, $args) { //Modification d'une fiche
+        global $Fiche;
+
+        $result = $Fiche->getFiches();
+
+//        print_r($result);
+
+//        $result = ['yyo', 'rrr'];
+
+        return json_encode($result);
+
+    });
+
 });
 
 $app->run();
